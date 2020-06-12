@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap Core CSS -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <style type="text/css">
+            .login-form {
+                width: 340px;
+                margin: 50px auto;
+            }
+            .login-form form {
+                margin-bottom: 15px;
+                background: #f7f7f7;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                padding: 30px;
+            }
+            .login-form h2 {
+                margin: 0 0 15px;
+            }
+            .form-control, .btn {
+                min-height: 38px;
+                border-radius: 2px;
+            }
+            .btn {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-form">
+            <form action="actions/loginAction.php" method="post">
+                <h2 class="text-center">
+                    <img src="../img/fav.png" width="80"/>
+                    <br>
+                    Admin Login
+                </h2>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Username" name="un" required="required" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" name="pw" required="required" autocomplete="off" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                </div>
+            </form>
+        </div>
+
+
+        <!-- Core JavaScript Files -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/jquery.easing.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script type="text/javascript">
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1),
+                        sURLVariables = sPageURL.split('&'),
+                        sParameterName,
+                        i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                    }
+                }
+            };
+
+            var msg = getUrlParameter('msg');
+
+            if (msg) {
+                swal({
+                    title: msg + "!",
+                    text: "",
+                    icon: "error",
+                    button: "Ok!",
+                    dangerMode: true
+                });
+            }
+        </script>
+    </body>
+</html>
