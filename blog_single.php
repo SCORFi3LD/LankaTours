@@ -79,7 +79,7 @@ $row = mysqli_fetch_assoc($result);
         <header id="header"></header>
         <section class="clearfix" style="height:100px;"></section>
         <section id="banner" style="height:300px;">
-            <img src="<?php echo $row['cover_image']; ?>" class="img-fluid" alt="<?php echo $row['blog_title']; ?>"/>
+            <img src="https://lankatourdriver.com/<?php echo $row['cover_image']; ?>" class="img-fluid" alt="<?php echo $row['blog_title']; ?>"/>
         </section>
         <main id="main">
             <section id="services" class="section-bg">
