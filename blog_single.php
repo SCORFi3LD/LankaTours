@@ -78,15 +78,13 @@ $row = mysqli_fetch_assoc($result);
     <body>
         <header id="header"></header>
         <section class="clearfix" style="height:100px;"></section>
-        <section id="banner" style="height:300px;">
-            <img src="https://lankatourdriver.com/<?php echo $row['cover_image']; ?>" class="img-fluid" alt="<?php echo $row['blog_title']; ?>"/>
-        </section>
         <main id="main">
             <section id="services" class="section-bg">
                 <div class="container">
                     <header class="section-header">
                         <h3 style="text-transform: capitalize;"><?php echo $row['blog_title']; ?></h3>
                     </header>
+                    <img src="https://lankatourdriver.com/<?php echo $row['cover_image']; ?>" class="img-fluid" style="width:100%;" alt="<?php echo $row['blog_title']; ?>"/>
                     <?php
                     $now = time();
                     $publishedDate = strtotime($row['published_date']);
